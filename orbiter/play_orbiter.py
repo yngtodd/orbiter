@@ -8,6 +8,7 @@ from orbiter.settings import Settings
 from orbiter.rendering import GameText
 from orbiter.rendering import box_label
 from orbiter.rendering import instruct_label
+from orbiter.rendering.shadow import cast_shadow
 
 from orbiter.physics import calc_eccentricity
 
@@ -53,15 +54,15 @@ def main():
             if event.type == pg.QUIT:
                 running = False
             elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
-                screen = pg.display.set+mode((800, 645))
+                screen = pg.display.set_mode((800, 645))
             elif event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 background.fill(settings.black)
             elif event.type == pg.KEYUP:
                 sat.thrust.stop()
-                mapping_off(planet)
+                mapping_off(planet, settings)
             elif mapping_enabled:
                 if event.type == pg.KEYDOWN and event.key == pg.K_m:
-                    mapping_on(planet)
+                    mapping_on(planet, settings)
 
         sat.locate(planet)
         planet.gravity(sat)
