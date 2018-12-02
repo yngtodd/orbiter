@@ -8,13 +8,6 @@
 
 --------------------------
 
-.. image:: https://badge.fury.io/py/orbiter.png
-    :target: http://badge.fury.io/py/orbiter
-
-.. image:: https://travis-ci.org/yngtodd/orbiter.png?branch=master
-    :target: https://travis-ci.org/yngtodd/orbiter
-
-
 =============================
 Orbiter
 =============================
