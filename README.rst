@@ -2,7 +2,7 @@
 
     <embed>
         <p align="center">
-            <img width="300" src="https://github.com/yngtodd/orbiter/blob/master/img/orbiter.png">
+            <img width="250" src="https://github.com/yngtodd/orbiter/blob/master/img/orbiter.png">
         </p>
     </embed>
 
