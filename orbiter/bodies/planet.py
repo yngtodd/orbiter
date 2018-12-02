@@ -4,7 +4,7 @@ import random
 import pygame as pg
 
 
-class Planet(pg.sprite.Sprite):
+class Mars(pg.sprite.Sprite):
     """Planet that rotates and projects gravitational field."""
     basedir = os.path.dirname(__file__)
     mars_img_path = os.path.join(basedir, 'assets/mars.png')
