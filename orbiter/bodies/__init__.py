@@ -1,2 +1,2 @@
-from .satelite import Satelite
+from .satellite import Satellite
 from .planet import Mars

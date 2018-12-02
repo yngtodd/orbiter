@@ -15,7 +15,7 @@ class Mars(pg.sprite.Sprite):
         self.settings = settings
         self.img_mars = pg.image.load(self.mars_img_path).convert()
         self.img_water = pg.image.load(self.water_img_path).convert()
-        self.image_copy = pg.transform.scale(self.image_mars, (100, 100))
+        self.image_copy = pg.transform.scale(self.img_mars, (100, 100))
         self.image_copy.set_colorkey(self.settings.black)
         self.rect = self.image_copy.get_rect()
         self.image = self.image_copy

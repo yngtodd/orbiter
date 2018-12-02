@@ -22,7 +22,7 @@ class Satellite(pg.sprite.Sprite):
         self.image.set_colorkey(settings.black)
         self.x = random.randrange(315, 425)
         self.y = random.randrange(70, 180)
-        self.dx = random.random.choice([-3, 3])
+        self.dx = random.choice([-3, 3])
         self.dy = 0
         self.heading = 0
         self.fuel = 100
@@ -40,7 +40,7 @@ class Satellite(pg.sprite.Sprite):
 
     def check_keys(self):
         """Check for key presses and fire thrusters."""
-        keys = pg.keys.get_pressed()
+        keys = pg.key.get_pressed()
 
         if keys[pg.K_RIGHT]:
             self.thruster(dx=0.05, dy=0)

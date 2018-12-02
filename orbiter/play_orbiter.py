@@ -1,4 +1,5 @@
-import os import pygame as pg
+import os
+import pygame as pg
 
 from orbiter.bodies import Mars
 from orbiter.bodies import Satellite
@@ -33,6 +34,7 @@ def main():
     sat_sprite = pg.sprite.Group(sat)
 
     dist_list = []
+    eccentricity = 1
     eccentricity_calc_interval = 5
 
     clock = pg.time.Clock()
@@ -71,16 +73,16 @@ def main():
         screen.blit(background, (0, 0))
 
         if sat.fuel <= 0:
-            instruct_label(screen, ['Fuel Depleted!'], settings.red, 340, 195)
+            instruct_label(screen, ['Fuel Depleted!'], settings.red, 340, 195, settings)
             sat.dx = 2
         elif sat.distance <= 68:
-            instruct_label(screen, ['Atmospheric Entry!'], settings.red, 320, 195)
+            instruct_label(screen, ['Atmospheric Entry!'], settings.red, 320, 195, settings)
             sat.dx = 0
             sat.dy = 0
 
         if eccentricity < 0.05 and sat.distance >= 69 and sat.distance <= 120:
             map_instruct = ['Press & hold M to map soil moisture']
-            instruct_label(screen, map_instruct, settings.lt_blue, 250, 175)
+            instruct_label(screen, map_instruct, settings.lt_blue, 250, 175, settings)
             mapping_enabled = True
         else:
             mapping_enabled = False
@@ -90,22 +92,22 @@ def main():
         sat_sprite.draw(screen)
 
         if pg.time.get_ticks() <= 15000:
-            instruct_label(screen, gametext.intro_text, self.green, 145, 100)
+            instruct_label(screen, gametext.intro_text, settings.green, 145, 100, settings)
 
-        box_label(screen, 'Dx', (70, 20, 75, 20))
-        box_label(screen, 'Dy', (150, 20, 80, 20))
-        box_label(screen, 'Altitude', (240, 20, 160, 20))
-        box_label(screen, 'Fuel', (410, 20, 160, 20))
-        box_label(screen, 'Eccentricity', (580, 20, 150, 20))
+        box_label(screen, 'Dx', (70, 20, 75, 20), settings)
+        box_label(screen, 'Dy', (150, 20, 80, 20), settings)
+        box_label(screen, 'Altitude', (240, 20, 160, 20), settings)
+        box_label(screen, 'Fuel', (410, 20, 160, 20), settings)
+        box_label(screen, 'Eccentricity', (580, 20, 150, 20), settings)
 
-        box_label(screen, '{:.1f}'.format(sat.dx), (70, 50, 75, 20))
-        box_label(screen, '{:.1f}'.format(sat.dy), (150, 50, 80, 20))
-        box_label(screen, '{:.1f}'.format(sat.distance), (240, 50, 160, 20))
-        box_label(screen, '{}'.format(sat.fuel), (410, 50, 160, 20))
-        box_label(screen, '{:.8f}'.format(eccentricity), (580, 50, 150, 20))
+        box_label(screen, '{:.1f}'.format(sat.dx), (70, 50, 75, 20), settings)
+        box_label(screen, '{:.1f}'.format(sat.dy), (150, 50, 80, 20), settings)
+        box_label(screen, '{:.1f}'.format(sat.distance), (240, 50, 160, 20), settings)
+        box_label(screen, '{}'.format(sat.fuel), (410, 50, 160, 20), settings)
+        box_label(screen, '{:.8f}'.format(eccentricity), (580, 50, 150, 20), settings)
 
-        instruct_label(screen, gametext.instruct_text0, settings.white, 10, 575)
-        instruct_label(screen, gametext.instruct_text1, settings.white, 570, 510)
+        instruct_label(screen, gametext.instruct_text0, settings.white, 10, 575, settings)
+        instruct_label(screen, gametext.instruct_text1, settings.white, 570, 510, settings)
 
         cast_shadow(screen)
         pg.draw.rect(screen, settings.white, (1, 1, 798, 643), 1)

@@ -1,7 +1,7 @@
 import pygame as pg
 
 
-def instruct_label(screen, text, color, x, y settings):
+def instruct_label(screen, text, color, x, y, settings):
     """Render text to screen."""
     instruct_font = pg.font.SysFont(None, 25)
     line_spacing = 22
