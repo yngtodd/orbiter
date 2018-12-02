@@ -49,5 +49,5 @@ Once you have a copy of the source, you can install it with:
 
     python setup.py install
 
- .. _tarball: https://github.com/yngtodd/orbiter/tarball/master
- .. _documentation: https://orbiter.readthedocs.io/en/latest
+.. _tarball: https://github.com/yngtodd/orbiter/tarball/master
+.. _documentation: https://orbiter.readthedocs.io/en/latest
