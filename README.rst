@@ -8,10 +8,6 @@
 
 --------------------------
 
-=======
-Orbiter
-=======
-
 Help mission control guide their Mars orbiter!
 
 Orbiter is a simple control game created by `Lee Vaughan`_ using Kepler's laws of planetary motion.
