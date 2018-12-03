@@ -53,6 +53,8 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False
+            elif event.type == pg.KEYDOWN and event.key == pg.K_q:
+                pg.quit()
             elif event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE:
                 screen = pg.display.set_mode((800, 645))
             elif event.type == pg.KEYDOWN and event.key == pg.K_SPACE:

@@ -83,4 +83,4 @@ class Satellite(pg.sprite.Sprite):
         self.rect.center = (self.x, self.y)
         if self.dx == 0 and self.dy == 0:
             self.image = self.img_crash
-            self.image.set_colorkey(settings.black)
+            self.image.set_colorkey(self.settings.black)
