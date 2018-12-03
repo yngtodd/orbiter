@@ -19,7 +19,7 @@ class Satellite(pg.sprite.Sprite):
         self.img_crash = pg.image.load(self.crash_img_path).convert()
         self.image = self.img_sat
         self.rect = self.image.get_rect()
-        self.image.set_colorkey(settings.black)
+        self.image.set_colorkey(self.settings.black)
         self.x = random.randrange(315, 425)
         self.y = random.randrange(70, 180)
         self.dx = random.choice([-3, 3])
