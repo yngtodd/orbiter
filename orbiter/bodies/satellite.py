@@ -25,7 +25,7 @@ class Satellite(pg.sprite.Sprite):
         self.dx = random.choice([-3, 3])
         self.dy = 0
         self.heading = 0
-        self.fuel = 100
+        self.fuel = 1000
         self.mass = 1
         self.distance = 0
         self.thrust = pg.mixer.Sound(self.sound_byte)
