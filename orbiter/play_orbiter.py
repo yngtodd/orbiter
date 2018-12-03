@@ -91,6 +91,7 @@ def main():
             mapping_enabled = False
 
         planet_sprite.update()
+        planet_sprite.draw(screen)
         sat_sprite.update()
         sat_sprite.draw(screen)
 
